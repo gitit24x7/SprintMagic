@@ -72,9 +72,7 @@ export default function App() {
   const [query, setQuery] = useState('')
   const [gitPanelOpen, setGitPanelOpen] = useState(false)
   const [syncResult, setSyncResult] = useState<SyncChange[] | null>(null)
-  const [view, setView] = useState<'landing' | 'about' | 'app'>(() =>
-    localStorage.getItem('sprintmagic.launched') ? 'app' : 'landing',
-  )
+  const [view, setView] = useState<'landing' | 'about' | 'app'>('landing')
   const [templatePickerOpen, setTemplatePickerOpen] = useState(false)
   const [helpOpen, setHelpOpen] = useState(false)
   const fileInput = useRef<HTMLInputElement>(null)
@@ -397,7 +395,10 @@ export default function App() {
                     Markdown source
                   </span>
                   <button
-                    onClick={() => applyToActive(draft)}
+                    onClick={() => {
+                      applyToActive(draft)
+                      if (window.innerWidth < 640) setEditorOpen(false)
+                    }}
                     className="rounded-md bg-orange-50 px-2 py-1 text-[11px] font-semibold text-orange-600 transition hover:bg-orange-100"
                   >
                     Apply → board

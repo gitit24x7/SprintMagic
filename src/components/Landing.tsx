@@ -177,21 +177,22 @@ export function Landing({ onStart, onAbout }: Props) {
         {/* ── Sticky Navbar ── */}
       <header className="sticky top-0 z-50 flex w-full justify-center backdrop-blur-lg bg-[#FDFBF7]/60 border-b border-stone-200/80">
         <div className="max-w-6xl w-full">
-          <div className="grid grid-cols-3 h-14 items-center px-6 gap-4">
+          <div className="flex h-14 items-center justify-between px-6 gap-4">
 
             {/* Left — logo wordmark */}
             <div className="flex items-center">
-              <a href="#" className="flex items-center gap-2 hover:opacity-70 transition-opacity">
+              <button onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-2 hover:opacity-70 transition-opacity">
                 <img src="/logo.png" alt="SprintMagic" width="24" height="24" className="h-6 w-6 object-contain" />
-                <span className="font-mono text-sm font-semibold uppercase tracking-wide text-stone-800">
+                <span className="font-mono text-sm font-semibold uppercase tracking-wide text-stone-800 hidden sm:inline">
                   SprintMagic
                 </span>
-              </a>
+              </button>
             </div>
 
             {/* Center — nav links */}
             <nav className="hidden lg:flex items-center justify-center gap-1">
               <button
+                onClick={() => window.scrollTo(0, 0)}
                 className="flex items-center px-3 py-1 rounded-lg font-mono text-sm font-semibold uppercase text-amber-600 bg-amber-50 transition-colors duration-200"
               >
                 Home
