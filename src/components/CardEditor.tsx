@@ -49,7 +49,7 @@ export function CardEditor({
       onClick={onClose}
     >
       <motion.div
-        className="w-full max-w-lg overflow-hidden rounded-2xl bg-white shadow-2xl"
+        className="w-[95vw] sm:w-full max-w-lg max-h-[90vh] overflow-y-auto overflow-x-hidden rounded-2xl bg-white shadow-2xl"
         initial={{ scale: 0.96, y: 8, opacity: 0 }}
         animate={{ scale: 1, y: 0, opacity: 1 }}
         exit={{ scale: 0.96, y: 8, opacity: 0 }}

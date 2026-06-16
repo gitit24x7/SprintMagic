@@ -292,7 +292,7 @@ export function BoardView({
             onDragEnd={onDragEnd}
           >
             <div className="flex h-full">
-              <div className="min-w-0 flex-1 overflow-x-auto px-6 pb-8">
+              <div className="min-w-0 flex-1 overflow-x-auto snap-x snap-mandatory px-6 pb-8">
                 <div className="flex items-start gap-4">
                   {activeColumns.map((column) => (
                     <ColumnView
@@ -306,7 +306,7 @@ export function BoardView({
                     />
                   ))}
 
-                  <div className="w-60 flex-none pt-7">
+                  <div className="w-60 flex-none snap-center pt-7">
                     {addingCol ? (
                       <input
                         autoFocus

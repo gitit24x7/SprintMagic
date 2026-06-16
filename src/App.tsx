@@ -260,7 +260,7 @@ export default function App() {
       onDrop={onDrop}
     >
       {/* Top bar */}
-      <header className="relative z-20 flex flex-none items-center gap-3 border-b border-line bg-white/70 px-4 py-2.5 backdrop-blur">
+      <header className="relative z-20 flex flex-wrap flex-none items-center gap-3 border-b border-line bg-white/70 px-4 py-2.5 backdrop-blur">
         <div className="flex items-center gap-2">
           {/* Home icon — always visible, returns to landing */}
           <button
@@ -384,14 +384,14 @@ export default function App() {
       <div className="flex min-h-0 flex-1">
         <AnimatePresence initial={false}>
           {editorOpen && (
-            <motion.aside
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 360, opacity: 1 }}
-              exit={{ width: 0, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 320, damping: 36 }}
-              className="flex-none overflow-hidden border-r border-line bg-white"
-            >
-              <div className="flex h-full w-[360px] flex-col">
+              <motion.aside
+                initial={{ width: 0, opacity: 0 }}
+                animate={{ width: typeof window !== 'undefined' && window.innerWidth < 640 ? '100%' : 360, opacity: 1 }}
+                exit={{ width: 0, opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 320, damping: 36 }}
+                className="absolute inset-y-0 left-0 z-40 sm:relative sm:inset-auto sm:z-auto flex-none overflow-hidden border-r border-line bg-white shadow-2xl sm:shadow-none"
+              >
+                <div className="flex h-full w-full sm:w-[360px] flex-col">
                 <div className="flex items-center justify-between px-4 py-2.5">
                   <span className="text-[11px] font-semibold uppercase tracking-wide text-zinc-400">
                     Markdown source

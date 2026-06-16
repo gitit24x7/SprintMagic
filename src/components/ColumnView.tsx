@@ -55,7 +55,7 @@ export function ColumnView({
                    'bg-stone-300'
 
   return (
-    <div className="flex w-72 flex-none flex-col">
+    <div className="flex w-72 flex-none snap-center flex-col">
       <div className={`mb-3 flex items-center gap-2 rounded-t-xl border-t-[3px] border-x border-b border-stone-200 px-3 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.02)] ${topStripColor}`}>
         <div className={`h-2 w-2 flex-none rounded-full ${dotColor}`} />
         <h2 className="text-[13.5px] font-semibold tracking-tight text-ink truncate">

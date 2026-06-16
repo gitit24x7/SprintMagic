@@ -113,7 +113,7 @@ function MiniBoard() {
   )
 
   return (
-    <div className="grid grid-cols-3 gap-3 rounded-xl border border-stone-200 bg-white p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 rounded-xl border border-stone-200 bg-white p-4">
       {col(
         'In Progress',
         <>
@@ -278,13 +278,13 @@ export function Landing({ onStart, onAbout }: Props) {
               >
                 <button
                   onClick={onStart}
-                  className="cursor-pointer inline-flex items-center justify-center gap-2 font-mono font-semibold uppercase border transition-all ease-in duration-75 active:scale-95 text-sm rounded-xl px-5 py-2.5 h-11 border-stone-200 hover:bg-stone-100 hover:border-stone-300 bg-white"
+                  className="cursor-pointer inline-flex w-full sm:w-auto items-center justify-center gap-2 font-mono font-semibold uppercase border transition-all ease-in duration-75 active:scale-95 text-sm rounded-xl px-5 py-2.5 h-11 border-stone-200 hover:bg-stone-100 hover:border-stone-300 bg-white"
                 >
                   Book a demo
                 </button>
                 <button
                   onClick={onStart}
-                  className="cursor-pointer inline-flex items-center justify-center gap-2 font-mono font-semibold uppercase border transition-all ease-in duration-75 active:scale-95 text-sm rounded-xl px-5 py-2.5 h-11 text-stone-50 bg-amber-500 border-amber-600 hover:bg-amber-600"
+                  className="cursor-pointer inline-flex w-full sm:w-auto items-center justify-center gap-2 font-mono font-semibold uppercase border transition-all ease-in duration-75 active:scale-95 text-sm rounded-xl px-5 py-2.5 h-11 text-stone-50 bg-amber-500 border-amber-600 hover:bg-amber-600"
                 >
                   Open the board
                   <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none">
@@ -295,13 +295,15 @@ export function Landing({ onStart, onAbout }: Props) {
             </div>
 
             {/* ━━━ RIGHT: Logo Showcase Illustration ━━━ */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              className="relative flex items-center justify-center mx-auto"
-              style={{ width: 480, height: 480 }}
-            >
+            <div className="w-full flex items-center justify-center overflow-hidden sm:overflow-visible">
+              <div className="scale-[0.6] sm:scale-75 lg:scale-100 origin-center h-[300px] sm:h-[400px] lg:h-auto flex items-center justify-center">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative flex items-center justify-center mx-auto"
+                  style={{ width: 480, height: 480 }}
+                >
               {/* Outermost glow blob */}
               <div
                 className="absolute inset-0 rounded-full"
@@ -496,6 +498,8 @@ export function Landing({ onStart, onAbout }: Props) {
                 </svg>
               </motion.span>
             </motion.div>
+              </div>
+            </div>
           </div>
 
           {/* ── Feature grid (3-col with border-lines, autosend style) ── */}

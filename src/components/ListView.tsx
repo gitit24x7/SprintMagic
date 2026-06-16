@@ -24,7 +24,7 @@ export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
 
   return (
     <div className="w-full max-w-6xl mx-auto py-6">
-      <div className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
+      <div className="overflow-x-auto overflow-y-hidden rounded-xl border border-stone-200 bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)]">
         <table className="w-full text-left text-[13px] text-stone-800">
           <thead className="bg-stone-50 text-[11px] font-semibold uppercase tracking-wider text-stone-500 border-b border-stone-200">
             <tr>
