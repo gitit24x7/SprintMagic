@@ -798,12 +798,17 @@ export function Landing({ onStart, onAbout }: Props) {
 
       {/* ── Footer ── */}
       <footer className="w-full border-t border-stone-200 bg-white mt-10">
-        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <img src="/logo.png" alt="SprintMagic" width="18" height="18" className="h-[18px] w-[18px] object-contain opacity-60" />
-            <span className="font-mono text-xs font-semibold uppercase text-stone-400 tracking-wide">SprintMagic</span>
+        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-4">
+          <div className="flex flex-col items-center gap-2 lg:items-start">
+            <div className="flex items-center gap-2">
+              <img src="/logo.png" alt="SprintMagic" width="18" height="18" className="h-[18px] w-[18px] object-contain opacity-60" />
+              <span className="font-mono text-xs font-semibold uppercase text-stone-400 tracking-wide">SprintMagic</span>
+            </div>
+            <p className="text-stone-400 text-[11px] font-mono text-center lg:text-left">
+              &copy; {new Date().getFullYear()} SprintMagic. Built by Aditya Ojha.
+            </p>
           </div>
-          <p className="text-stone-400 text-xs font-mono text-center">
+          <p className="text-stone-400 text-[11px] lg:text-xs font-mono text-center">
             Runs entirely in your browser · Your board is always a file you own
           </p>
           <div className="flex items-center gap-4">
