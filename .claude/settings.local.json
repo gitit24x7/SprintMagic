@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(rm -f src/App.css)",
+      "Bash(npx tsc *)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm install *)",
+      "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\(Buffer.from\\(fs.readFileSync\\('public/og.svg'\\)\\)\\).png\\(\\).resize\\(1200,630\\).toFile\\('public/og.png'\\).then\\(\\(\\)=>console.log\\('OG PNG created'\\)\\).catch\\(e=>console.error\\('FAIL',e.message\\)\\)\")",
+      "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\(Buffer.from\\(fs.readFileSync\\('public/og.svg'\\)\\)\\).png\\(\\).resize\\(1200,630\\).toFile\\('public/og.png'\\).then\\(\\(\\)=>console.log\\('OG PNG regenerated'\\)\\).catch\\(e=>console.error\\('FAIL',e.message\\)\\)\")"
+    ]
+  }
+}

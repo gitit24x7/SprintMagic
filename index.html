@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#fbfbfa" />
+
+    <title>SprintMagic — your sprint board, in Markdown</title>
+    <meta
+      name="description"
+      content="A Markdown-native, Jira-style project board that updates itself from your git activity. Drag-and-drop sprints and kanban — no signup, your data stays in your browser."
+    />
+
+    <!-- Open Graph (Facebook, LinkedIn, Slack, Discord) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SprintMagic" />
+    <meta property="og:title" content="Your sprint board is just a Markdown file." />
+    <meta
+      property="og:description"
+      content="A Jira-style board that updates itself from your git activity. Markdown-native, no signup."
+    />
+    <!-- After deploy, change these to your absolute URL, e.g. https://sprintmagic.app/og.png -->
+    <meta property="og:image" content="/og.png" />
+    <meta property="og:url" content="/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your sprint board is just a Markdown file." />
+    <meta
+      name="twitter:description"
+      content="A Jira-style board that updates itself from your git activity. Markdown-native, no signup."
+    />
+    <meta name="twitter:image" content="/og.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--
+      Analytics (privacy-friendly, cookieless). To enable after deploy:
+      1. Sign up at https://plausible.io (or self-host Umami), add your domain.
+      2. Uncomment the line below and set data-domain to your domain.
+      <script defer data-domain="YOUR_DOMAIN" src="https://plausible.io/js/script.js"></script>
+    -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
