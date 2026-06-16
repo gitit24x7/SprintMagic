@@ -1,4 +1,4 @@
-import { type Card, type Column } from '../types'
+import { type Column } from '../types'
 import { cardMatches } from '../lib/filter'
 
 interface Props {
@@ -42,7 +42,7 @@ export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
               const p = card.priority
               const pColor =
                 p === 'high' ? 'bg-rose-50 text-rose-600 border-rose-200' :
-                p === 'medium' ? 'bg-amber-50 text-amber-600 border-amber-200' :
+                p === 'med' ? 'bg-amber-50 text-amber-600 border-amber-200' :
                 p === 'low' ? 'bg-sky-50 text-sky-600 border-sky-200' :
                 'bg-stone-50 text-stone-600 border-stone-200'
 
@@ -81,10 +81,11 @@ export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
                     )}
                   </td>
                   <td className="px-4 py-3">
-                    {card.assignee ? (
+                    {card.assignees.length > 0 ? (
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-100 px-2 py-0.5 text-[11px] font-medium text-stone-700">
                         <div className="h-4 w-4 rounded-full bg-gradient-to-br from-orange-400 to-rose-400" />
-                        {card.assignee}
+                        {card.assignees[0]}
+                        {card.assignees.length > 1 && ` +${card.assignees.length - 1}`}
                       </span>
                     ) : (
                       <span className="text-[11px] text-stone-400">-</span>

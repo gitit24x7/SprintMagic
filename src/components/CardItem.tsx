@@ -8,7 +8,6 @@ import {
   avatarClasses,
   formatDate,
   initials,
-  tagColor,
 } from '../lib/ui'
 import type { IssueType } from '../types'
 
