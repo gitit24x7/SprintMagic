@@ -14,6 +14,8 @@ const STATS = [
   { value: '1 file', label: 'Your entire sprint' },
 ]
 
+const INSTALL_CMD = 'npx sprintmagic init'
+
 const FEATURES = [
   {
     id: 'markdown',
@@ -148,7 +150,35 @@ function MiniBoard() {
 
 export function Landing({ onStart, onAbout }: Props) {
   const [activeFeature, setActiveFeature] = useState(0)
+  const [copied, setCopied] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const copyInstall = () => {
+    const flash = () => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1600)
+    }
+    const fallback = () => {
+      try {
+        const ta = document.createElement('textarea')
+        ta.value = INSTALL_CMD
+        ta.style.position = 'fixed'
+        ta.style.opacity = '0'
+        document.body.appendChild(ta)
+        ta.select()
+        document.execCommand('copy')
+        document.body.removeChild(ta)
+        flash()
+      } catch {
+        flash() // still confirm; the user can copy the visible command
+      }
+    }
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(INSTALL_CMD).then(flash).catch(fallback)
+    } else {
+      fallback()
+    }
+  }
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -685,6 +715,112 @@ export function Landing({ onStart, onAbout }: Props) {
                     )}
                   </div>
                 ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── npm / CLI auto-sync USP ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            className="my-10 md:my-20 flex flex-col border-x border-t border-stone-200"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 border-b border-stone-200">
+              {/* Left: the pitch */}
+              <div className="flex flex-col gap-4 px-4 md:px-6 py-8 md:py-10 border-b md:border-b-0 md:border-r border-stone-200 bg-white">
+                <p className="text-emerald-600 font-mono font-medium text-sm uppercase leading-4">
+                  #02 — One command
+                </p>
+                <h2 className="font-display text-[28px] md:text-[36px] leading-[1.2] text-stone-900">
+                  Your board updates itself{' '}
+                  <em className="not-italic text-stone-400">from git.</em>
+                </h2>
+                <p className="text-stone-500 text-sm md:text-base leading-relaxed max-w-md">
+                  Run one command in your repo. From then on, your branches, pull
+                  requests and merges move issues on their own — no backend,
+                  nothing leaves your repo.
+                </p>
+
+                {/* signal mapping */}
+                <div className="mt-1 flex flex-col gap-2">
+                  {[
+                    { word: 'branch', col: 'In Progress', dot: 'bg-amber-400' },
+                    { word: 'pr', col: 'In Review', dot: 'bg-sky-400' },
+                    { word: 'merged', col: 'Done', dot: 'bg-emerald-400' },
+                  ].map(({ word, col, dot }) => (
+                    <div key={word} className="flex items-center gap-2.5 font-mono text-[12px]">
+                      <span className="rounded bg-stone-100 px-1.5 py-0.5 text-stone-700">
+                        {word}
+                      </span>
+                      <svg viewBox="0 0 16 16" className="h-3 w-3 text-stone-400" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span className="flex items-center gap-1.5 text-stone-600">
+                        <span className={`h-1.5 w-1.5 rounded-full ${dot}`} />
+                        {col}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <a
+                  href="https://www.npmjs.com/package/sprintmagic"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-2 inline-flex w-fit items-center gap-1.5 font-mono text-[12px] font-semibold uppercase text-stone-500 hover:text-amber-600 transition-colors"
+                >
+                  View on npm
+                  <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none">
+                    <path d="M5 11L11 5M11 5H6M11 5V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Right: terminal */}
+              <div className="flex items-center justify-center bg-stone-100 px-5 py-10 md:px-8">
+                <div className="w-full max-w-md overflow-hidden rounded-xl border border-stone-800 bg-stone-950 shadow-2xl">
+                  {/* title bar */}
+                  <div className="flex items-center gap-1.5 border-b border-stone-800 px-4 py-2.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-rose-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                    <span className="ml-2 font-mono text-[10px] uppercase tracking-wider text-stone-500">
+                      your-repo
+                    </span>
+                    <button
+                      onClick={copyInstall}
+                      className="ml-auto inline-flex items-center gap-1 rounded-md border border-stone-700 px-2 py-0.5 font-mono text-[10px] font-semibold uppercase text-stone-400 hover:bg-stone-800 hover:text-stone-100 transition-colors"
+                    >
+                      {copied ? (
+                        <>
+                          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5 text-emerald-400" fill="none">
+                            <path d="M2.5 6.2l2.2 2.3L9.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                          Copied
+                        </>
+                      ) : (
+                        'Copy'
+                      )}
+                    </button>
+                  </div>
+                  {/* body */}
+                  <div className="px-4 py-4 font-mono text-[12px] leading-6">
+                    <div className="flex items-center gap-2">
+                      <span className="text-emerald-400">$</span>
+                      <span className="text-stone-100">npx sprintmagic init</span>
+                    </div>
+                    <div className="mt-2 text-stone-400">
+                      <span className="text-emerald-400">✓</span> Created .github/workflows/sprintmagic.yml
+                      <br />
+                      <span className="text-emerald-400">✓</span> Created board.md
+                      <br />
+                      <span className="mt-1 inline-block text-stone-500">
+                        Your board now updates itself from git.
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
