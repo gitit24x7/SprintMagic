@@ -24,6 +24,7 @@ import {
 } from './lib/boardActions'
 import { syncIssuesWithGit } from './lib/gitSync'
 import type { GitSignal, SyncChange } from './lib/gitSync'
+import { recordSnapshot } from './lib/history'
 import { BoardView } from './components/BoardView'
 import { BoardSwitcher } from './components/BoardSwitcher'
 import { CardEditor } from './components/CardEditor'
@@ -82,6 +83,11 @@ export default function App() {
   useEffect(() => {
     saveWorkspace(workspace)
   }, [workspace])
+
+  // Record a daily burndown snapshot for the active sprint board.
+  useEffect(() => {
+    recordSnapshot(workspace.activeId, board)
+  }, [workspace.activeId, board])
 
   // Keep the source panel mirrored to the active board (also fires on switch,
   // since `board` is a fresh object reference then).
@@ -431,6 +437,7 @@ export default function App() {
         <main className="min-w-0 flex-1 overflow-hidden">
           <BoardView
             board={board}
+            boardId={workspace.activeId}
             query={query}
             onAddCard={(colId, title) => setBoard((b) => addCard(b, colId, title))}
             onToggleDone={(id) => setBoard((b) => toggleCardDone(b, id))}

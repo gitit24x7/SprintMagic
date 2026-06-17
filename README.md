@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="public/logo.png" width="120" alt="SprintMagic Logo" />
+  <h1>SprintMagic</h1>
+  <p><strong>Your sprint board is just a Markdown file.</strong></p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <p>
+    <a href="https://www.npmjs.com/package/sprintmagic"><img src="https://img.shields.io/npm/v/sprintmagic?color=emerald&style=flat-square" alt="NPM Version" /></a>
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License" />
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
+  </p>
+</div>
 
-Currently, two official plugins are available:
+## ✨ Why SprintMagic?
+Plan in plain text, get a beautiful Jira-style drag-and-drop board that updates itself from your git activity. Your data never leaves your browser, and your source of truth is always a single `.md` file you own.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Quick Start (One Command)
 
-## React Compiler
+Your board updates itself from git. Run one command in your repo. From then on, your branches, pull requests and merges move issues on their own — no backend, nothing leaves your repo.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npx sprintmagic init
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+**What this does:**
+1. Creates a `board.md` file in your repository.
+2. Sets up a GitHub Workflow (`.github/workflows/sprintmagic.yml`) to automatically sync PRs and branch activity to your board.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+That's it. Your board now updates itself.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🌟 Features
+
+*   📝 **Markdown-Native Board:** Write `## Column` + `- [ ] task` and watch a drag-and-drop sprint board appear instantly.
+*   🔄 **Git Sync Auto-Updates:** Open a PR, watch the card move to "In Review" automatically. Merged PRs move to "Done". No manual status updates ever.
+*   🔒 **Privacy First & Local:** No account. No server. Your board lives in your browser or your local repo.
+*   🤖 **AI-Agent Friendly:** Built for the AI era. Ask your AI coding assistant to create and manage your tasks directly by editing the `board.md` source code!
+*   ⚡ **Zero Latency:** Runs entirely in your browser with zero server latency.
+*   🎟️ **Epics & Sprints:** Full project management vocabulary (Issues, Epics, Sprints, Story points) without the enterprise bloat.
+
+## 💻 Running the UI Locally
+
+If you want to run the standalone SprintMagic Web UI locally:
+
+```bash
+# Clone the repository
+git clone https://github.com/gitit24x7/SprintMagic.git
+cd SprintMagic
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
 ```
+
+## 🛠️ Built With
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- dnd-kit
+
+## 👨‍💻 Author
+Built with ❤️ by **Aditya Ojha**.
+
+## 📄 License
+This project is open-source under the MIT License.

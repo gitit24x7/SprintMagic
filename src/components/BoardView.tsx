@@ -19,12 +19,14 @@ import { ColumnView } from './ColumnView'
 import { CardBody } from './CardItem'
 import { ListView } from './ListView'
 import { EpicSwimlanes } from './EpicSwimlanes'
+import { Reports } from './Reports'
 import { BacklogDrawerDnd, BacklogDrawerStatic } from './BacklogDrawer'
 
-type GroupBy = 'status' | 'list' | 'epic'
+type GroupBy = 'status' | 'list' | 'epic' | 'reports'
 
 interface Props {
   board: Board
+  boardId: string
   query: string
   onAddCard: (columnId: string, title: string) => void
   onToggleDone: (cardId: string) => void
@@ -37,6 +39,7 @@ interface Props {
 
 export function BoardView({
   board,
+  boardId,
   query,
   onAddCard,
   onToggleDone,
@@ -220,7 +223,7 @@ export function BoardView({
       {/* Controls */}
       <div className="flex items-center gap-2 px-6 pb-3 pt-3">
         <div className="flex rounded-lg bg-zinc-100 p-0.5">
-          {(['status', 'list', 'epic'] as GroupBy[]).map((g) => (
+          {(['status', 'list', 'epic', 'reports'] as GroupBy[]).map((g) => (
             <button
               key={g}
               onClick={() => setGroupBy(g)}
@@ -230,7 +233,13 @@ export function BoardView({
                   : 'text-zinc-500 hover:text-ink'
               }`}
             >
-              {g === 'status' ? 'Board' : g === 'list' ? 'List' : 'By epic'}
+              {g === 'status'
+                ? 'Board'
+                : g === 'list'
+                  ? 'List'
+                  : g === 'epic'
+                    ? 'By epic'
+                    : 'Reports'}
             </button>
           ))}
         </div>
@@ -357,6 +366,8 @@ export function BoardView({
               onToggleDone={onToggleDone}
             />
           </div>
+        ) : groupBy === 'reports' ? (
+          <Reports board={board} boardId={boardId} />
         ) : (
           <div className="flex h-full">
             <div className="min-w-0 flex-1 overflow-auto px-6 pb-8">

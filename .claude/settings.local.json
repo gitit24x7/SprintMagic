@@ -9,7 +9,11 @@
       "mcp__Claude_Preview__preview_start",
       "Bash(npm install *)",
       "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\(Buffer.from\\(fs.readFileSync\\('public/og.svg'\\)\\)\\).png\\(\\).resize\\(1200,630\\).toFile\\('public/og.png'\\).then\\(\\(\\)=>console.log\\('OG PNG created'\\)\\).catch\\(e=>console.error\\('FAIL',e.message\\)\\)\")",
-      "Bash(node -e \"const sharp=require\\('sharp'\\);const fs=require\\('fs'\\);sharp\\(Buffer.from\\(fs.readFileSync\\('public/og.svg'\\)\\)\\).png\\(\\).resize\\(1200,630\\).toFile\\('public/og.png'\\).then\\(\\(\\)=>console.log\\('OG PNG regenerated'\\)\\).catch\\(e=>console.error\\('FAIL',e.message\\)\\)\")"
+      "Bash(printf '//registry.npmjs.org/:_authToken=npm_***\\\\n')",
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
