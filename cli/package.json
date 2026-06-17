@@ -1,0 +1,36 @@
+{
+  "name": "sprintmagic",
+  "version": "0.1.0",
+  "description": "Keep your SprintMagic board (board.md) in sync with your git activity — issues move themselves as branches and PRs happen.",
+  "type": "module",
+  "bin": {
+    "sprintmagic": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "homepage": "https://sprintmagic.app",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "sprintmagic",
+    "kanban",
+    "scrum",
+    "markdown",
+    "github",
+    "sync",
+    "project-management"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.4.0"
+  }
+}
