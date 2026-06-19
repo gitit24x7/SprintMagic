@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import type { Card, IssueType, Priority } from '../types'
-import { ISSUE_TYPES, ISSUE_TYPE_META, PRIORITY_META } from '../lib/ui'
+import type { Card, IssueType, Priority, Board } from '../types'
+import { ISSUE_TYPES, ISSUE_TYPE_META, getPriorityMeta } from '../lib/ui'
 
 interface Props {
   card: Card
+  priorityStyle?: Board['priorityStyle']
   onPatch: (patch: Partial<Card>) => void
   onDelete: () => void
   onClose: () => void
@@ -13,10 +14,11 @@ interface Props {
   onDeleteSubtask: (subId: string) => void
 }
 
-const PRIORITIES: Priority[] = ['high', 'med', 'low']
+const PRIORITIES: Priority[] = ['high', 'med', 'low', 'p0', 'p1', 'p2', 'p3']
 
 export function CardEditor({
   card,
+  priorityStyle,
   onPatch,
   onDelete,
   onClose,
@@ -145,21 +147,24 @@ export function CardEditor({
           {/* Priority */}
           <Field label="Priority">
             <div className="flex gap-1.5">
-              {PRIORITIES.map((p) => (
-                <button
-                  key={p}
-                  onClick={() =>
-                    onPatch({ priority: card.priority === p ? undefined : p })
-                  }
-                  className={`rounded-lg px-2.5 py-1 text-[12px] font-medium ring-1 transition ${
-                    card.priority === p
-                      ? PRIORITY_META[p].chip + ' ring-transparent'
-                      : 'bg-white text-zinc-500 ring-zinc-200 hover:bg-zinc-50'
-                  }`}
-                >
-                  {PRIORITY_META[p].label}
-                </button>
-              ))}
+              {PRIORITIES.map((p) => {
+                const meta = getPriorityMeta(p, priorityStyle)
+                return (
+                  <button
+                    key={p}
+                    onClick={() =>
+                      onPatch({ priority: card.priority === p ? undefined : p })
+                    }
+                    className={`rounded-lg px-2.5 py-1 text-[12px] font-medium ring-1 transition ${
+                      card.priority === p
+                        ? meta.chip + ' ring-transparent'
+                        : 'bg-white text-zinc-500 ring-zinc-200 hover:bg-zinc-50'
+                    }`}
+                  >
+                    {meta.label}
+                  </button>
+                )
+              })}
             </div>
           </Field>
 
@@ -176,7 +181,7 @@ export function CardEditor({
           </Field>
 
           <div className="grid grid-cols-3 gap-4">
-            <Field label="Due date">
+            <Field label="Delivery date">
               <input
                 type="date"
                 value={card.due ?? ''}

@@ -11,7 +11,7 @@ const TOKENS: { syntax: string; meaning: string }[] = [
   { syntax: '⇥ - [ ] Subtask', meaning: 'Indent under an issue → sub-task' },
   { syntax: '⇥ Some notes…', meaning: 'Indented text → description' },
   { syntax: '@alice', meaning: 'Assignee (repeatable)' },
-  { syntax: '~2026-06-15', meaning: 'Due date' },
+  { syntax: '~2026-06-15', meaning: 'Delivery date' },
   { syntax: '!high  !med  !low', meaning: 'Priority' },
   { syntax: '*5', meaning: 'Story points' },
   { syntax: '#label', meaning: 'Label (repeatable)' },

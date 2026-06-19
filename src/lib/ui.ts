@@ -1,4 +1,4 @@
-import type { IssueType, Priority } from '../types'
+import type { IssueType, Priority, PriorityStyle } from '../types'
 
 const AVATAR_PALETTE = [
   'bg-rose-100 text-rose-700',
@@ -99,6 +99,41 @@ export const PRIORITY_META: Record<
     bar: 'bg-slate-300',
     chip: 'bg-slate-50 text-slate-500 ring-slate-100',
   },
+  p0: {
+    label: 'P0',
+    bar: 'bg-rose-400',
+    chip: 'bg-rose-50 text-rose-600 ring-rose-100',
+  },
+  p1: {
+    label: 'P1',
+    bar: 'bg-amber-400',
+    chip: 'bg-amber-50 text-amber-700 ring-amber-100',
+  },
+  p2: {
+    label: 'P2',
+    bar: 'bg-slate-300',
+    chip: 'bg-slate-50 text-slate-500 ring-slate-100',
+  },
+  p3: {
+    label: 'P3',
+    bar: 'bg-stone-200',
+    chip: 'bg-stone-50 text-stone-400 ring-stone-100',
+  },
+}
+
+export function getPriorityMeta(p: Priority, style: PriorityStyle = 'default') {
+  let mapped = p
+  if (style === 'p-scale') {
+    if (p === 'high') mapped = 'p0'
+    if (p === 'med') mapped = 'p1'
+    if (p === 'low') mapped = 'p2'
+  } else {
+    if (p === 'p0') mapped = 'high'
+    if (p === 'p1') mapped = 'med'
+    if (p === 'p2') mapped = 'low'
+    // p3 has no High/Med/Low equivalent — keep its own label in both modes
+  }
+  return PRIORITY_META[mapped]
 }
 
 const MONTHS = [

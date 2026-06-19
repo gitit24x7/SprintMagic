@@ -35,6 +35,7 @@ interface Props {
   onAddColumn: (name: string) => void
   onOpenGitSync: () => void
   onRenameBoard: (title: string) => void
+  onTogglePriorityStyle: () => void
 }
 
 export function BoardView({
@@ -48,6 +49,7 @@ export function BoardView({
   onAddColumn,
   onOpenGitSync,
   onRenameBoard,
+  onTogglePriorityStyle,
 }: Props) {
   const [activeId, setActiveId] = useState<string | null>(null)
   const [newCol, setNewCol] = useState('')
@@ -134,7 +136,7 @@ export function BoardView({
   return (
     <div className="flex h-full flex-col">
       {/* Header */}
-      <div className="flex flex-wrap items-end justify-between gap-4 px-6 pb-4 pt-8 border-b border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.02)] bg-white z-10">
+      <div className="flex flex-wrap items-end justify-between gap-4 px-6 pb-3 pt-4 border-b border-stone-200/80 shadow-[0_1px_3px_rgba(0,0,0,0.02)] bg-white z-10">
         <div className="min-w-0">
           <div className="mb-1.5 flex items-center gap-2">
             <span
@@ -168,13 +170,13 @@ export function BoardView({
                 }
                 if (e.key === 'Escape') setEditingTitle(false)
               }}
-              className="w-full max-w-md border-b border-orange-300 bg-transparent font-display text-2xl font-semibold tracking-tight text-ink outline-none"
+              className="w-full max-w-md border-b border-orange-300 bg-transparent font-display text-lg font-semibold tracking-tight text-ink outline-none"
             />
           ) : (
             <h1
               onClick={() => setEditingTitle(true)}
               title="Click to rename"
-              className="cursor-text rounded font-display text-2xl font-semibold tracking-tight text-ink transition hover:opacity-60"
+              className="cursor-text rounded font-display text-lg font-semibold tracking-tight text-ink transition hover:opacity-60"
             >
               {board.title}
             </h1>
@@ -251,8 +253,15 @@ export function BoardView({
         )}
 
         <button
+          onClick={onTogglePriorityStyle}
+          className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-line bg-white px-2.5 py-1.5 text-[12px] font-medium text-ink-soft transition hover:bg-zinc-50 hover:text-ink"
+        >
+          {board.priorityStyle === 'p-scale' ? 'P0-P2 Priority' : 'High/Med/Low Priority'}
+        </button>
+
+        <button
           onClick={onOpenGitSync}
-          className="ml-auto inline-flex items-center gap-1.5 rounded-lg border border-orange-200 bg-orange-50 px-2.5 py-1.5 text-[12px] font-semibold text-orange-700 transition hover:bg-orange-100"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-orange-200 bg-orange-50 px-2.5 py-1.5 text-[12px] font-semibold text-orange-700 transition hover:bg-orange-100"
         >
           <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none">
             <circle cx="4" cy="4" r="2" stroke="currentColor" strokeWidth="1.4" />
@@ -309,6 +318,7 @@ export function BoardView({
                       column={column}
                       mode={board.mode}
                       query={query}
+                      priorityStyle={board.priorityStyle}
                       onAddCard={(title) => onAddCard(column.id, title)}
                       onToggleDone={onToggleDone}
                       onOpenCard={onOpenCard}
@@ -362,6 +372,7 @@ export function BoardView({
             <ListView
               columns={activeColumns}
               query={query}
+              priorityStyle={board.priorityStyle}
               onOpenCard={onOpenCard}
               onToggleDone={onToggleDone}
             />
@@ -375,6 +386,7 @@ export function BoardView({
                 columns={activeColumns}
                 mode={board.mode}
                 query={query}
+                priorityStyle={board.priorityStyle}
                 onToggleDone={onToggleDone}
                 onOpenCard={onOpenCard}
               />

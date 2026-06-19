@@ -28,6 +28,7 @@ export function boardToMarkdown(board: Board): string {
   if (board.start) fm.push(`start: ${board.start}`)
   if (board.end) fm.push(`end: ${board.end}`)
   if (board.keyPrefix && board.keyPrefix !== 'SM') fm.push(`key: ${board.keyPrefix}`)
+  if (board.priorityStyle && board.priorityStyle !== 'default') fm.push(`priorityStyle: ${board.priorityStyle}`)
   fm.push(`phases: [${board.columns.map((c) => c.name).join(', ')}]`)
   fm.push('---', '')
 

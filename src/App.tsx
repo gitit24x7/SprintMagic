@@ -448,6 +448,7 @@ export default function App() {
             onAddColumn={(name) => setBoard((b) => addColumn(b, name))}
             onOpenGitSync={() => setGitPanelOpen(true)}
             onRenameBoard={renameBoard}
+            onTogglePriorityStyle={() => setBoard(b => ({ ...b, priorityStyle: b.priorityStyle === 'p-scale' ? 'default' : 'p-scale' }))}
           />
         </main>
       </div>
@@ -542,6 +543,7 @@ export default function App() {
         {openCard && (
           <CardEditor
             card={openCard}
+            priorityStyle={board.priorityStyle}
             onPatch={(patch) => setBoard((b) => updateCard(b, openCard.id, patch))}
             onDelete={() => {
               setBoard((b) => deleteCard(b, openCard.id))
@@ -579,6 +581,11 @@ export default function App() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <footer className="flex-none border-t border-line bg-white px-4 py-3 text-center text-[12px] text-zinc-400 sm:flex sm:items-center sm:justify-between sm:text-left shadow-sm z-10">
+        <p>&copy; {new Date().getFullYear()} SprintMagic. All rights reserved.</p>
+        <p className="mt-1 sm:mt-0">Built by <span className="font-semibold text-zinc-600">Aditya Ojha</span></p>
+      </footer>
     </div>
   )
 }

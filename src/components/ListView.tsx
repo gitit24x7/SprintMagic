@@ -1,14 +1,16 @@
-import { type Column } from '../types'
+import { type Column, type Board } from '../types'
 import { cardMatches } from '../lib/filter'
+import { getPriorityMeta } from '../lib/ui'
 
 interface Props {
   columns: Column[]
   query: string
+  priorityStyle?: Board['priorityStyle']
   onOpenCard: (cardId: string) => void
   onToggleDone: (cardId: string) => void
 }
 
-export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
+export function ListView({ columns, query, priorityStyle, onOpenCard, onToggleDone }: Props) {
   const cards = columns.flatMap((c) => 
     c.cards.map((card) => ({ card, columnId: c.id, columnName: c.name }))
   )
@@ -40,12 +42,6 @@ export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
           <tbody className="divide-y divide-stone-100">
             {visibleCards.map(({ card, columnName }) => {
               const p = card.priority
-              const pColor =
-                p === 'high' ? 'bg-rose-50 text-rose-600 border-rose-200' :
-                p === 'med' ? 'bg-amber-50 text-amber-600 border-amber-200' :
-                p === 'low' ? 'bg-sky-50 text-sky-600 border-sky-200' :
-                'bg-stone-50 text-stone-600 border-stone-200'
-
               return (
                 <tr 
                   key={card.id} 
@@ -74,11 +70,14 @@ export function ListView({ columns, query, onOpenCard, onToggleDone }: Props) {
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    {p && (
-                      <span className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${pColor}`}>
-                        {p}
-                      </span>
-                    )}
+                    {p && (() => {
+                      const meta = getPriorityMeta(p, priorityStyle)
+                      return (
+                        <span className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[10px] font-semibold uppercase ${meta.chip}`}>
+                          {meta.label}
+                        </span>
+                      )
+                    })()}
                   </td>
                   <td className="px-4 py-3">
                     {card.assignees.length > 0 ? (

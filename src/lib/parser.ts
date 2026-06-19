@@ -47,6 +47,7 @@ interface Frontmatter {
   end?: string
   key?: string
   phases?: string[]
+  priorityStyle?: string
 }
 
 function stripQuotes(value: string): string {
@@ -89,13 +90,18 @@ function parseFrontmatter(raw: string): { fm: Frontmatter; body: string } {
       fm.start = stripQuotes(value)
     } else if (key === 'end') {
       fm.end = stripQuotes(value)
+    } else if (key === 'prioritystyle' || key === 'priority-style') {
+      const val = stripQuotes(value).toLowerCase()
+      if (val === 'p-scale' || val === 'default') {
+        fm.priorityStyle = val
+      }
     }
   }
 
   return { fm, body: raw.slice(match[0].length) }
 }
 
-const PRIORITIES: Priority[] = ['high', 'med', 'low']
+const PRIORITIES: Priority[] = ['high', 'med', 'low', 'p0', 'p1', 'p2', 'p3']
 const ISSUE_TYPES: IssueType[] = ['story', 'task', 'bug']
 
 type CardFields = Pick<
@@ -150,8 +156,8 @@ function parseCardLine(text: string): CardFields {
     return ' '
   })
 
-  // !high | !med | !low  (priority)
-  title = title.replace(/(?:^|\s)!(high|med|low)\b/gi, (_, p) => {
+  // !high | !med | !low | !p0 | !p1 | !p2 | !p3  (priority)
+  title = title.replace(/(?:^|\s)!(high|med|low|p0|p1|p2|p3)\b/gi, (_, p) => {
     const lowered = p.toLowerCase() as Priority
     if (PRIORITIES.includes(lowered)) priority = lowered
     return ' '
@@ -319,6 +325,7 @@ export function parseMarkdown(raw: string): ParseResult {
     start: fm.start,
     end: fm.end,
     keyPrefix,
+    priorityStyle: fm.priorityStyle as 'default' | 'p-scale' | undefined,
     columns,
   }
 

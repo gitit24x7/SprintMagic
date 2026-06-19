@@ -68,7 +68,7 @@ phases: [Backlog, In Progress, Review, Done]
 | Token | Meaning |
 | --- | --- |
 | `@alice` | Assignee (repeatable) |
-| `~2026-06-15` | Due date |
+| `~YYYY-MM-DD` | Delivery date |
 | `!high` `!med` `!low` | Priority |
 | `*5` | Story points |
 | `#label` | Label (repeatable) |

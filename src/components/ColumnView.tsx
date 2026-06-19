@@ -10,6 +10,7 @@ interface Props {
   column: Column
   mode: Board['mode']
   query: string
+  priorityStyle?: Board['priorityStyle']
   onAddCard: (title: string) => void
   onToggleDone: (cardId: string) => void
   onOpenCard: (cardId: string) => void
@@ -19,6 +20,7 @@ export function ColumnView({
   column,
   mode,
   query,
+  priorityStyle,
   onAddCard,
   onToggleDone,
   onOpenCard,
@@ -97,8 +99,8 @@ export function ColumnView({
 
       <div
         ref={setNodeRef}
-        className={`flex min-h-[60px] flex-col gap-2 rounded-xl p-1 transition-colors ${
-          isOver ? 'bg-orange-50/60' : ''
+        className={`flex min-h-[60px] flex-col gap-1.5 rounded-xl px-0.5 py-0.5 transition-colors duration-150 ${
+          isOver ? 'bg-orange-50/70 ring-1 ring-inset ring-orange-200/60' : ''
         } ${overWip ? 'ring-1 ring-inset ring-rose-200' : ''}`}
       >
         <SortableContext
@@ -110,6 +112,7 @@ export function ColumnView({
               key={card.id}
               card={card}
               mode={mode}
+              priorityStyle={priorityStyle}
               dimmed={!cardMatches(card, query)}
               onToggleDone={() => onToggleDone(card.id)}
               onOpen={() => onOpenCard(card.id)}

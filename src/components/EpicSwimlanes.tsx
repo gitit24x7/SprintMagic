@@ -8,6 +8,7 @@ interface Props {
   columns: Column[]
   mode: Board['mode']
   query: string
+  priorityStyle?: Board['priorityStyle']
   onToggleDone: (cardId: string) => void
   onOpenCard: (cardId: string) => void
 }
@@ -16,6 +17,7 @@ export function EpicSwimlanes({
   columns,
   mode,
   query,
+  priorityStyle,
   onToggleDone,
   onOpenCard,
 }: Props) {
@@ -93,6 +95,7 @@ export function EpicSwimlanes({
                         key={card.id}
                         card={card}
                         mode={mode}
+                        priorityStyle={priorityStyle}
                         onToggleDone={() => onToggleDone(card.id)}
                         onOpen={() => onOpenCard(card.id)}
                       />

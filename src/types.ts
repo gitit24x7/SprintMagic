@@ -4,7 +4,9 @@
 
 export type BoardMode = 'sprint' | 'kanban'
 
-export type Priority = 'high' | 'med' | 'low'
+export type PriorityStyle = 'default' | 'p-scale'
+
+export type Priority = 'p0' | 'p1' | 'p2' | 'p3' | 'high' | 'med' | 'low'
 
 // Jira-style issue types. Epic is intentionally NOT here — it stays a grouping
 // link (the `epic` field) rather than a board issue, matching Jira's Epic Link.
@@ -48,6 +50,7 @@ export interface Board {
   end?: string
   keyPrefix: string // issue-key prefix, e.g. "SM"
   columns: Column[]
+  priorityStyle?: PriorityStyle
 }
 
 export interface ParseWarning {
