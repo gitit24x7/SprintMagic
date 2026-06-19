@@ -930,8 +930,53 @@ export function Landing({ onStart, onAbout }: Props) {
           </div>
         </section>
 
+        {/* ── FAQ Section (SEO-rich) ── */}
+        <section aria-labelledby="faq-heading" className="w-full border-t border-stone-200 bg-white">
+          <div className="max-w-6xl mx-auto px-6 py-14 md:py-20">
+            <div className="mb-10 text-center">
+              <p className="font-mono text-xs font-semibold uppercase text-amber-500 mb-2 tracking-wide">FAQs</p>
+              <h2 id="faq-heading" className="font-display text-[28px] md:text-[36px] leading-[1.2] text-stone-900">
+                Common questions
+              </h2>
+            </div>
+            <dl className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                {
+                  q: 'What is SprintMagic?',
+                  a: 'SprintMagic is a free, open-source, Markdown-native Kanban and sprint board. Your entire project lives in a single .md file. It works entirely in your browser — no backend, no signup, no data leaving your machine.',
+                },
+                {
+                  q: 'Is SprintMagic a free Jira alternative?',
+                  a: 'Yes. SprintMagic is 100% free, forever, with no paid plan. It supports Epics, Sprints, Story Points, Subtasks, Assignees, Due Dates, and P0-P3 priority labels — all the Jira features teams actually use, with none of the bloat.',
+                },
+                {
+                  q: 'How does the GitHub sync work?',
+                  a: 'Run `npx sprintmagic init` in your repo. It installs a GitHub Actions workflow that watches PRs and branch merges and automatically updates your board.md to move cards between columns.',
+                },
+                {
+                  q: 'Does SprintMagic store my data?',
+                  a: 'No. SprintMagic is 100% local-first. Your board is a .md file in your own repository. Nothing is ever sent to any server. You own your data, always.',
+                },
+                {
+                  q: 'Can AI agents use SprintMagic?',
+                  a: 'Yes — this is a first-class use case. Ask Cursor, Copilot, or any AI coding assistant to create and manage tasks by editing the board.md file directly. SprintMagic was built for the AI coding era.',
+                },
+                {
+                  q: 'What is the difference between High/Med/Low and P0-P3?',
+                  a: 'SprintMagic supports both. Product and design teams tend to prefer High/Medium/Low labels. Engineering teams often prefer P0-P3 (P0 = critical, P3 = nice-to-have). You can toggle between the two display modes per board without changing your data.',
+                },
+              ].map(({ q, a }) => (
+                <div key={q} className="border-l-2 border-amber-200 pl-4">
+                  <dt className="font-semibold text-stone-800 text-[15px] leading-snug mb-2">{q}</dt>
+                  <dd className="text-stone-500 text-sm leading-relaxed">{a}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
         {/* ── Footer ── */}
-        <footer className="w-full border-t border-stone-200 bg-white mt-10">
+        <footer className="w-full border-t border-stone-200 bg-white mt-0" role="contentinfo">
           <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col items-center justify-between gap-6 lg:flex-row lg:gap-4">
             <div className="flex flex-col items-center gap-2 lg:items-start">
               <div className="flex items-center gap-2">
@@ -948,12 +993,23 @@ export function Landing({ onStart, onAbout }: Props) {
             <div className="flex items-center gap-4">
               <button
                 onClick={onAbout}
+                aria-label="Learn about SprintMagic"
                 className="font-mono text-xs font-semibold uppercase text-stone-400 hover:text-stone-600 transition-colors"
               >
                 About
               </button>
+              <a
+                href="https://github.com/gitit24x7/SprintMagic"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SprintMagic on GitHub"
+                className="font-mono text-xs font-semibold uppercase text-stone-400 hover:text-stone-600 transition-colors"
+              >
+                GitHub
+              </a>
               <button
                 onClick={onStart}
+                aria-label="Open the SprintMagic board app"
                 className="font-mono text-xs font-semibold uppercase text-amber-500 hover:text-amber-700 transition-colors"
               >
                 Open app →

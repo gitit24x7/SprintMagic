@@ -2,54 +2,244 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#fbfbfa" />
+    <meta name="theme-color" content="#f97316" />
 
-    <title>SprintMagic — your sprint board, in Markdown</title>
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  PRIMARY SEO                                               -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <title>SprintMagic — Free Markdown Kanban Board & Sprint Planner for Developers</title>
     <meta
       name="description"
-      content="A Markdown-native, Jira-style project board that updates itself from your git activity. Drag-and-drop sprints and kanban — no signup, your data stays in your browser."
+      content="SprintMagic turns a Markdown file into a Jira-style drag-and-drop sprint board. GitHub auto-sync moves cards when PRs open or merge. Zero backend, zero signup, 100% local-first. The fastest way for developers and indie teams to manage sprints."
     />
+    <meta
+      name="keywords"
+      content="markdown kanban board, sprint board developer, jira alternative free, github kanban board, markdown project management, local-first kanban, developer sprint tracker, free sprint planning tool, kanban without jira, markdown todo board, github actions kanban, no backend kanban, indie hacker project tracker, open source sprint board, p0 p1 priority tracker"
+    />
+    <meta name="author" content="Aditya Ojha" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://sprintmagic.app/" />
 
-    <!-- Open Graph (Facebook, LinkedIn, Slack, Discord) -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  OPEN GRAPH — Facebook, LinkedIn, Slack, Discord, iMessage -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SprintMagic" />
-    <meta property="og:title" content="Your sprint board is just a Markdown file." />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="SprintMagic — Your Sprint Board is Just a Markdown File" />
     <meta
       property="og:description"
-      content="A Jira-style board that updates itself from your git activity. Markdown-native, no signup."
+      content="Jira is bloated. Linear is overkill. SprintMagic is a lightning-fast, zero-backend sprint board powered by a single .md file. GitHub auto-sync included. Free forever."
     />
-    <!-- After deploy, change these to your absolute URL, e.g. https://sprintmagic.app/og.png -->
-    <meta property="og:image" content="/og.png" />
-    <meta property="og:url" content="/" />
+    <meta property="og:image" content="https://sprintmagic.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SprintMagic — Markdown-native sprint board with GitHub sync" />
+    <meta property="og:url" content="https://sprintmagic.app/" />
 
-    <!-- Twitter -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  TWITTER / X                                               -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Your sprint board is just a Markdown file." />
+    <meta name="twitter:site" content="@sprintmagic" />
+    <meta name="twitter:creator" content="@adityaojha" />
+    <meta name="twitter:title" content="SprintMagic — Your Sprint Board is Just a Markdown File" />
     <meta
       name="twitter:description"
-      content="A Jira-style board that updates itself from your git activity. Markdown-native, no signup."
+      content="Jira is bloated. SprintMagic is a drag-and-drop Kanban board that lives in a .md file and auto-syncs with GitHub. Zero signup. Free forever."
     />
-    <meta name="twitter:image" content="/og.png" />
+    <meta name="twitter:image" content="https://sprintmagic.app/og.png" />
+    <meta name="twitter:image:alt" content="SprintMagic sprint board interface" />
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  STRUCTURED DATA — JSON-LD (Google Rich Results)          -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://sprintmagic.app/#app",
+          "name": "SprintMagic",
+          "url": "https://sprintmagic.app",
+          "description": "A Markdown-native, GitHub-synced sprint board and Kanban tool for developers and indie teams. No signup, no server, 100% local-first.",
+          "applicationCategory": "DeveloperApplication",
+          "applicationSubCategory": "Project Management",
+          "operatingSystem": "Web Browser",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "featureList": [
+            "Markdown-native sprint board",
+            "GitHub Actions auto-sync",
+            "Drag-and-drop Kanban columns",
+            "Epic swimlanes",
+            "Sprint and Kanban modes",
+            "P0-P3 priority labels",
+            "Subtasks and story points",
+            "Assignees and due dates",
+            "Overdue highlighting",
+            "Zero backend, 100% local-first",
+            "Open source, free forever"
+          ],
+          "keywords": "markdown kanban, sprint board, jira alternative, github kanban, local-first project management",
+          "author": {
+            "@type": "Person",
+            "name": "Aditya Ojha",
+            "url": "https://github.com/gitit24x7"
+          },
+          "screenshot": "https://sprintmagic.app/og.png",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "ratingCount": "1"
+          },
+          "license": "https://opensource.org/licenses/MIT",
+          "isAccessibleForFree": true,
+          "softwareVersion": "1.0.0",
+          "datePublished": "2026-01-01",
+          "dateModified": "2026-06-19"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sprintmagic.app/#website",
+          "url": "https://sprintmagic.app",
+          "name": "SprintMagic",
+          "description": "Free Markdown-based sprint board and Kanban tool with GitHub auto-sync for developers.",
+          "publisher": {
+            "@type": "Person",
+            "name": "Aditya Ojha"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://sprintmagic.app/?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is SprintMagic?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SprintMagic is a free, open-source, Markdown-native sprint board and Kanban tool. Your entire project board lives in a single .md file. It works entirely in your browser with no backend, no signup, and no data leaving your machine."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is SprintMagic free?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. SprintMagic is completely free and open source, licensed under MIT. There is no paid plan, no trial period, and no credit card required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does SprintMagic compare to Jira?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SprintMagic is intentionally lightweight. Unlike Jira, it requires no account, no server, and no configuration. You write a Markdown file and get a drag-and-drop Kanban board instantly. GitHub Actions sync your PR activity to the board automatically."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the GitHub sync work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Run `npx sprintmagic init` in your repo. It installs a GitHub Actions workflow that watches your PRs and branch merges, and automatically updates your board.md file to move cards between columns."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does SprintMagic store my data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. SprintMagic is 100% local-first. Your board data lives in a .md file in your own repository. Nothing is ever sent to any server."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  ICONS & PWA                                               -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  PERFORMANCE — font preloading                             -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap"
       rel="stylesheet"
     />
 
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!--  ANALYTICS (optional — uncomment after deploy)             -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
     <!--
-      Analytics (privacy-friendly, cookieless). To enable after deploy:
-      1. Sign up at https://plausible.io (or self-host Umami), add your domain.
-      2. Uncomment the line below and set data-domain to your domain.
-      <script defer data-domain="YOUR_DOMAIN" src="https://plausible.io/js/script.js"></script>
+    <script defer data-domain="sprintmagic.app" src="https://plausible.io/js/script.js"></script>
     -->
   </head>
   <body>
-    <div id="root"></div>
+    <!--
+      ╔══════════════════════════════════════════════════════════╗
+      ║  SEO FALLBACK CONTENT — visible only to crawlers that    ║
+      ║  don't execute JavaScript (search bots, link scrapers).  ║
+      ║  React mounts over this seamlessly.                      ║
+      ╚══════════════════════════════════════════════════════════╝
+    -->
+    <div id="root">
+      <main>
+        <h1>SprintMagic — Free Markdown Kanban Board for Developers</h1>
+        <p>
+          SprintMagic is a free, open-source project management tool that turns a plain Markdown
+          file into a beautiful, drag-and-drop Kanban sprint board. GitHub Actions automatically
+          move your cards when pull requests are opened or merged — no manual updates, ever.
+        </p>
+        <h2>Why SprintMagic?</h2>
+        <ul>
+          <li>Jira alternative — free, zero signup, zero backend</li>
+          <li>Markdown-native: write <code>## Column</code> and <code>- [ ] task</code> to create boards instantly</li>
+          <li>GitHub auto-sync: PRs and merges move cards automatically</li>
+          <li>100% local-first: your data never leaves your repository</li>
+          <li>P0-P3 and High/Med/Low priority labels for engineers and product teams</li>
+          <li>Epics, subtasks, story points, due dates, and assignees built-in</li>
+          <li>Overdue task highlighting</li>
+          <li>Open source, MIT license</li>
+        </ul>
+        <h2>Get Started in One Command</h2>
+        <pre><code>npx sprintmagic init</code></pre>
+        <p>
+          This creates a <code>board.md</code> in your repo and installs a GitHub Actions workflow
+          that keeps your board in sync with your git activity automatically.
+        </p>
+        <h2>Frequently Asked Questions</h2>
+        <h3>Is SprintMagic free?</h3>
+        <p>Yes. SprintMagic is completely free and open source (MIT license). No paid plan, no trial.</p>
+        <h3>How does SprintMagic compare to Jira or Linear?</h3>
+        <p>
+          Unlike Jira or Linear, SprintMagic requires no account and no server. Your board is a
+          single Markdown file. It is ideal for indie hackers, small engineering teams, and
+          open-source projects that want maximum velocity with zero overhead.
+        </p>
+        <h3>Does SprintMagic store my data?</h3>
+        <p>No. Everything lives in your own repository. Nothing is sent to any server.</p>
+      </main>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

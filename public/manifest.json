@@ -1,0 +1,27 @@
+{
+  "name": "SprintMagic",
+  "short_name": "SprintMagic",
+  "description": "Markdown-native sprint board with GitHub auto-sync. No signup. No server. Just a .md file.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbfa",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "developer tools", "project management"]
+}
