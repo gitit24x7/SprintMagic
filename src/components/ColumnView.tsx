@@ -56,6 +56,9 @@ export function ColumnView({
                    isDone ? 'bg-emerald-400' :
                    'bg-stone-300'
 
+  const status: 'todo' | 'progress' | 'review' | 'done' =
+    isDone ? 'done' : isReview ? 'review' : isProgress ? 'progress' : 'todo'
+
   return (
     <div className="flex w-72 flex-none snap-center flex-col">
       <div className={`mb-3 flex items-center gap-2 rounded-t-xl border-t-[3px] border-x border-b border-stone-200 px-3 py-2.5 shadow-[0_1px_2px_rgba(0,0,0,0.02)] ${topStripColor}`}>
@@ -112,6 +115,7 @@ export function ColumnView({
               key={card.id}
               card={card}
               mode={mode}
+              status={status}
               priorityStyle={priorityStyle}
               dimmed={!cardMatches(card, query)}
               onToggleDone={() => onToggleDone(card.id)}

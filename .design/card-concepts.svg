@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1520" height="1060" viewBox="0 0 760 530" fill="none">
+  <rect width="760" height="530" fill="#f7f6f3"/>
+  <text x="20" y="30" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#1c1917">SprintMagic — card concepts</text>
+  <text x="20" y="46" font-family="Inter, Arial, sans-serif" font-size="11" fill="#a8a29e">same issue, four directions · your orange/stone palette · thin black border</text>
+
+  <text x="20" y="76" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#44403c">01 · Ticket stub</text>
+  <text x="392" y="76" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#44403c">02 · Terminal</text>
+  <text x="20" y="300" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#44403c">03 · Swiss editorial</text>
+  <text x="392" y="300" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="600" fill="#44403c">04 · Index slip</text>
+
+  <!-- ───────── 01 Ticket stub ───────── -->
+  <g transform="translate(20,86)">
+    <rect x="0" y="0" width="348" height="190" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="66" cy="0" r="6" fill="#f7f6f3"/>
+    <circle cx="66" cy="190" r="6" fill="#f7f6f3"/>
+    <line x1="66" y1="12" x2="66" y2="178" stroke="#d6d3d1" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <rect x="25" y="20" width="16" height="16" rx="4" fill="#10b981"/>
+    <rect x="30" y="25" width="6" height="6" rx="1" fill="#ffffff"/>
+    <text transform="rotate(-90 33 118)" x="33" y="118" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="1" fill="#78716c">SM-5</text>
+    <circle cx="322" cy="30" r="13" fill="#fed7aa"/>
+    <text x="322" y="34" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#9a3412">AL</text>
+    <text x="86" y="44" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="500" fill="#1c1917">Build login form</text>
+    <line x1="86" y1="52" x2="176" y2="52" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="91" cy="72" r="3" fill="#a78bfa"/>
+    <text x="99" y="75" font-family="Inter, Arial, sans-serif" font-size="11" fill="#7c3aed">Login</text>
+    <circle cx="89" cy="158" r="3.5" fill="#f43f5e"/>
+    <text x="97" y="161" font-family="Inter, Arial, sans-serif" font-size="11" fill="#78716c">High</text>
+    <text x="142" y="161" font-family="Inter, Arial, sans-serif" font-size="11" fill="#78716c">5 pts</text>
+    <text x="190" y="161" font-family="Inter, Arial, sans-serif" font-size="11" fill="#78716c">Jun 15</text>
+  </g>
+
+  <!-- ───────── 02 Terminal ───────── -->
+  <g transform="translate(392,86)">
+    <rect x="0" y="0" width="348" height="190" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="18" cy="20" r="3.5" fill="#f43f5e"/>
+    <circle cx="30" cy="20" r="3.5" fill="#f59e0b"/>
+    <circle cx="42" cy="20" r="3.5" fill="#10b981"/>
+    <text x="332" y="24" text-anchor="end" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#a8a29e">SM-5 · login-form</text>
+    <line x1="14" y1="34" x2="334" y2="34" stroke="#ececec" stroke-width="1"/>
+    <text x="16" y="66" font-family="ui-monospace, Menlo, monospace" font-size="14" font-weight="500" fill="#1c1917"><tspan fill="#f97316">&gt; </tspan>Build login form</text>
+    <rect x="185" y="56" width="2" height="14" fill="#f97316"/>
+    <text x="16" y="90" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7c3aed">// Login</text>
+    <text x="16" y="158" font-family="ui-monospace, Menlo, monospace" font-size="11"><tspan fill="#f43f5e">high</tspan><tspan fill="#78716c"> · 5pt · jun 15 · 0/3</tspan></text>
+    <circle cx="322" cy="153" r="13" fill="#fed7aa"/>
+    <text x="322" y="157" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#9a3412">AL</text>
+  </g>
+
+  <!-- ───────── 03 Swiss editorial ───────── -->
+  <g transform="translate(20,310)">
+    <rect x="0" y="0" width="348" height="190" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <text x="22" y="34" font-family="ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1.5" fill="#a8a29e">SM-5 <tspan fill="#f97316">/</tspan> STORY</text>
+    <circle cx="314" cy="30" r="13" fill="none" stroke="#1c1917" stroke-width="1.2"/>
+    <text x="314" y="34" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#44403c">AL</text>
+    <text x="22" y="78" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#1c1917" letter-spacing="-0.5">Build login form</text>
+    <line x1="22" y1="98" x2="326" y2="98" stroke="#e7e5e4" stroke-width="1"/>
+    <circle cx="26" cy="160" r="3.5" fill="#f43f5e"/>
+    <text x="34" y="163" font-family="ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1" fill="#78716c">HIGH</text>
+    <text x="150" y="163" font-family="ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1" fill="#78716c">5 PTS</text>
+    <text x="252" y="163" font-family="ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1" fill="#78716c">JUN 15</text>
+    <rect x="314" y="150" width="12" height="12" fill="#f97316"/>
+  </g>
+
+  <!-- ───────── 04 Index slip ───────── -->
+  <g transform="translate(392,310)">
+    <rect x="0" y="0" width="348" height="190" rx="8" fill="#faf7f0" stroke="#1c1917" stroke-width="1.3"/>
+    <rect x="18" y="18" width="16" height="16" rx="4" fill="#10b981"/>
+    <rect x="23" y="23" width="6" height="6" rx="1" fill="#ffffff"/>
+    <text x="42" y="30" font-family="Inter, Arial, sans-serif" font-size="11" fill="#57534e">story</text>
+    <g transform="rotate(3 313 24)">
+      <rect x="288" y="14" width="50" height="20" rx="3" fill="none" stroke="#a8a29e" stroke-width="1"/>
+      <text x="313" y="28" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" fill="#78716c">SM-5</text>
+    </g>
+    <text x="18" y="74" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="500" fill="#1c1917">Build login form</text>
+    <line x1="18" y1="84" x2="330" y2="84" stroke="#e7ddd0" stroke-width="1"/>
+    <g transform="rotate(-4 47 119)">
+      <rect x="20" y="108" width="54" height="22" rx="4" fill="none" stroke="#f43f5e" stroke-width="1.3"/>
+      <text x="47" y="123" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1" fill="#e11d48">HIGH</text>
+    </g>
+    <text x="88" y="124" font-family="Inter, Arial, sans-serif" font-size="11" fill="#78716c">5 pts · Jun 15</text>
+    <circle cx="316" cy="152" r="13" fill="#fed7aa"/>
+    <text x="316" y="156" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#9a3412">AL</text>
+  </g>
+</svg>
