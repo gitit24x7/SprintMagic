@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1040" viewBox="0 0 680 520" fill="none">
+  <rect width="680" height="520" fill="#f7f6f3"/>
+  <text x="60" y="30" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700" fill="#1c1917">Ticket × Terminal — built</text>
+  <text x="60" y="46" font-family="Inter, Arial, sans-serif" font-size="11" fill="#a8a29e">status lamp · syntax glyph · markdown [ ] toggle · mono body · thin black border</text>
+
+  <!-- Card 1: In progress (amber) -->
+  <g transform="translate(60,70)">
+    <rect x="0" y="0" width="320" height="96" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="26" cy="18" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="29" r="8" fill="#f59e0b" opacity="0.18"/><circle cx="26" cy="29" r="4" fill="#f59e0b"/>
+    <circle cx="26" cy="40" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <g transform="translate(26,60) rotate(45)"><rect x="-5" y="-5" width="10" height="10" rx="1.4" fill="#10b981"/></g>
+    <text x="24" y="82" text-anchor="middle" transform="rotate(-90 24 82)" font-family="ui-monospace, Menlo, monospace" font-size="9" letter-spacing="1.5" fill="#a8a29e">SM-5</text>
+    <line x1="52" y1="10" x2="52" y2="86" stroke="#d6d3d1" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <circle cx="52" cy="0" r="5.5" fill="#fbfbfa"/><circle cx="52" cy="96" r="5.5" fill="#fbfbfa"/>
+    <text x="62" y="26" font-family="ui-monospace, Menlo, monospace" font-size="12"><tspan fill="#a8a29e">[ ] </tspan><tspan fill="#1c1917">Build login form</tspan></text>
+    <circle cx="298" cy="22" r="11" fill="#fed7aa"/><text x="298" y="25.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#9a3412">AL</text>
+    <text x="62" y="46" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7c3aed">// Login</text>
+    <text x="62" y="82" font-family="ui-monospace, Menlo, monospace" font-size="10.5"><tspan fill="#f43f5e">high</tspan><tspan fill="#78716c"> · 5pt · jun 22 · 0/3</tspan></text>
+  </g>
+
+  <!-- Card 2: Overdue (red) -->
+  <g transform="translate(60,178)">
+    <rect x="0" y="0" width="320" height="96" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="26" cy="18" r="8" fill="#f43f5e" opacity="0.18"/><circle cx="26" cy="18" r="4" fill="#f43f5e"/>
+    <circle cx="26" cy="29" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="40" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <g transform="translate(26,60) rotate(45)"><rect x="-5" y="-5" width="10" height="10" rx="1.4" fill="#10b981"/></g>
+    <text x="24" y="82" text-anchor="middle" transform="rotate(-90 24 82)" font-family="ui-monospace, Menlo, monospace" font-size="9" letter-spacing="1.5" fill="#a8a29e">SM-6</text>
+    <line x1="52" y1="10" x2="52" y2="86" stroke="#d6d3d1" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <circle cx="52" cy="0" r="5.5" fill="#fbfbfa"/><circle cx="52" cy="96" r="5.5" fill="#fbfbfa"/>
+    <text x="62" y="26" font-family="ui-monospace, Menlo, monospace" font-size="12"><tspan fill="#a8a29e">[ ] </tspan><tspan fill="#1c1917">Session token refresh</tspan></text>
+    <circle cx="298" cy="22" r="11" fill="#fed7aa"/><text x="298" y="25.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#9a3412">SA</text>
+    <text x="62" y="46" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7c3aed">// Login</text>
+    <text x="62" y="82" font-family="ui-monospace, Menlo, monospace" font-size="10.5"><tspan fill="#d97706">med</tspan><tspan fill="#78716c"> · 3pt · </tspan><tspan fill="#e11d48">jun 15 ⚠</tspan></text>
+  </g>
+
+  <!-- Card 3: Done (green) -->
+  <g transform="translate(60,286)">
+    <rect x="0" y="0" width="320" height="96" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="26" cy="18" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="29" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="40" r="8" fill="#10b981" opacity="0.18"/><circle cx="26" cy="40" r="4" fill="#10b981"/>
+    <polyline points="21,60 24.5,63.5 31,56" stroke="#0ea5e9" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="24" y="82" text-anchor="middle" transform="rotate(-90 24 82)" font-family="ui-monospace, Menlo, monospace" font-size="9" letter-spacing="1.5" fill="#a8a29e">SM-9</text>
+    <line x1="52" y1="10" x2="52" y2="86" stroke="#d6d3d1" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <circle cx="52" cy="0" r="5.5" fill="#fbfbfa"/><circle cx="52" cy="96" r="5.5" fill="#fbfbfa"/>
+    <text x="62" y="26" font-family="ui-monospace, Menlo, monospace" font-size="12" text-decoration="line-through"><tspan fill="#10b981">[x] </tspan><tspan fill="#a8a29e">Set up DB schema</tspan></text>
+    <circle cx="298" cy="22" r="11" fill="#fed7aa"/><text x="298" y="25.5" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="8.5" font-weight="600" fill="#9a3412">BO</text>
+    <text x="62" y="46" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#0d9488">// Infra</text>
+    <text x="62" y="82" font-family="ui-monospace, Menlo, monospace" font-size="10.5" fill="#78716c">3pt</text>
+  </g>
+
+  <!-- Card 4: To do (idle) -->
+  <g transform="translate(60,394)">
+    <rect x="0" y="0" width="320" height="96" rx="12" fill="#ffffff" stroke="#1c1917" stroke-width="1.3"/>
+    <circle cx="26" cy="18" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="29" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="40" r="4" fill="#ffffff" stroke="#d6d3d1" stroke-width="1.4"/>
+    <circle cx="26" cy="60" r="6" fill="none" stroke="#f43f5e" stroke-width="1" opacity="0.35"/><circle cx="26" cy="60" r="3.4" fill="#f43f5e"/>
+    <text x="24" y="82" text-anchor="middle" transform="rotate(-90 24 82)" font-family="ui-monospace, Menlo, monospace" font-size="9" letter-spacing="1.5" fill="#a8a29e">SM-3</text>
+    <line x1="52" y1="10" x2="52" y2="86" stroke="#d6d3d1" stroke-width="1.2" stroke-dasharray="2 4"/>
+    <circle cx="52" cy="0" r="5.5" fill="#fbfbfa"/><circle cx="52" cy="96" r="5.5" fill="#fbfbfa"/>
+    <text x="62" y="26" font-family="ui-monospace, Menlo, monospace" font-size="12"><tspan fill="#a8a29e">[ ] </tspan><tspan fill="#1c1917">Rate-limit login attempts</tspan></text>
+    <text x="62" y="46" font-family="ui-monospace, Menlo, monospace" font-size="11" fill="#7c3aed">// Login</text>
+    <text x="62" y="82" font-family="ui-monospace, Menlo, monospace" font-size="10.5"><tspan fill="#a8a29e">low</tspan><tspan fill="#78716c"> · 2pt · #security</tspan></text>
+  </g>
+
+  <!-- annotations -->
+  <g font-family="Inter, Arial, sans-serif" font-size="11" fill="#a8a29e">
+    <text x="396" y="124">amber lamp — in progress</text>
+    <text x="396" y="232">red lamp — overdue, triage</text>
+    <text x="396" y="340">green lamp — done · [x] strikes the title</text>
+    <text x="396" y="448">all dim — to do · idle</text>
+  </g>
+</svg>

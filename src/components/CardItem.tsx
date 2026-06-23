@@ -83,6 +83,33 @@ function Assignees({ card }: { card: Card }) {
   )
 }
 
+// ─── Ticket notch ─────────────────────────────────────────────────────────────
+// A pure arc (the curve only — no straight segment) plus a canvas-coloured fill
+// that erases the card's straight border exactly across the notch opening.
+function Notch({ edge }: { edge: 'top' | 'bottom' }) {
+  return (
+    <svg
+      aria-hidden
+      width="18"
+      height="11"
+      viewBox="0 0 18 11"
+      style={{
+        position: 'absolute',
+        left: '43px',
+        overflow: 'visible',
+        ...(edge === 'top'
+          ? { top: '-2px' }
+          : { bottom: '-2px', transform: 'rotate(180deg)' }),
+      }}
+    >
+      {/* erase the straight card border across the notch + fill the bowl */}
+      <path d="M0 2 A9 9 0 0 0 18 2 L18 -5 L0 -5 Z" fill="var(--color-canvas)" />
+      {/* the notch curve only — no straight line */}
+      <path d="M0 2 A9 9 0 0 0 18 2" fill="none" stroke="#1c1917" strokeWidth="1" />
+    </svg>
+  )
+}
+
 // ─── Card Body ────────────────────────────────────────────────────────────────
 interface BodyProps {
   card: Card
@@ -123,8 +150,8 @@ export function CardBody({ card, mode, status, priorityStyle, onToggleDone, onOp
         outline-none transition-all duration-200 ease-out
         ${dimmed ? 'opacity-25 saturate-0' : ''}
         ${dragging
-          ? 'shadow-[0_16px_36px_-8px_rgba(0,0,0,0.18),0_4px_10px_-2px_rgba(0,0,0,0.08)] scale-[1.015] rotate-[0.4deg] z-20'
-          : 'shadow-[0_1px_2px_rgba(0,0,0,0.06)] hover:-translate-y-[2px] hover:shadow-[0_7px_20px_-4px_rgba(0,0,0,0.14),0_2px_6px_-1px_rgba(0,0,0,0.08)]'
+          ? 'shadow-[0_20px_40px_-8px_rgba(0,0,0,0.22),0_4px_12px_-2px_rgba(0,0,0,0.10)] scale-[1.015] rotate-[0.4deg] z-20'
+          : 'shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_16px_-8px_rgba(0,0,0,0.13),0_18px_26px_-14px_rgba(234,88,12,0.12),0_0_0_0.5px_rgba(0,0,0,0.04)] hover:-translate-y-[2px] hover:shadow-[0_2px_4px_rgba(0,0,0,0.05),0_14px_26px_-8px_rgba(0,0,0,0.16),0_28px_40px_-16px_rgba(234,88,12,0.20),0_0_0_0.5px_rgba(0,0,0,0.05)]'
         }
       `}
     >
@@ -158,9 +185,8 @@ export function CardBody({ card, mode, status, priorityStyle, onToggleDone, onOp
             </button>
             <p
               title={card.title}
-              className={`font-mono text-[13px] leading-[1.4] tracking-[-0.005em] ${
-                card.done ? 'text-stone-400 line-through decoration-stone-300/70' : 'text-stone-800 group-hover:text-stone-900'
-              }`}
+              className={`font-mono text-[13px] leading-[1.4] tracking-[-0.005em] ${card.done ? 'text-stone-400 line-through decoration-stone-300/70' : 'text-stone-800 group-hover:text-stone-900'
+                }`}
             >
               {card.title}
               <span
@@ -204,9 +230,9 @@ export function CardBody({ card, mode, status, priorityStyle, onToggleDone, onOp
         )}
       </div>
 
-      {/* ── Ticket notches (punched holes on the perforation) ── */}
-      <span aria-hidden className="absolute h-[11px] w-[11px] rounded-full" style={{ left: '46.5px', top: '-5.5px', backgroundColor: 'var(--color-canvas)' }} />
-      <span aria-hidden className="absolute h-[11px] w-[11px] rounded-full" style={{ left: '46.5px', bottom: '-5.5px', backgroundColor: 'var(--color-canvas)' }} />
+      {/* ── Ticket notches ── */}
+      <Notch edge="top" />
+      <Notch edge="bottom" />
     </div>
   )
 }

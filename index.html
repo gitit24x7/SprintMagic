@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f97316" />
 
+    <!-- Instant paint colour so the pre-mount moment is the brand canvas, not raw text -->
+    <style>
+      html, body { margin: 0; background: #fdfbf7; }
+    </style>
+
     <!-- ═══════════════════════════════════════════════════════════ -->
     <!--  PRIMARY SEO                                               -->
     <!-- ═══════════════════════════════════════════════════════════ -->
@@ -203,6 +208,11 @@
       ╚══════════════════════════════════════════════════════════╝
     -->
     <div id="root">
+      <div style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fdfbf7">
+        <img src="/logo.png" width="40" height="40" alt="" style="opacity:.85" />
+      </div>
+    </div>
+    <noscript>
       <main>
         <h1>SprintMagic — Free Markdown Kanban Board for Developers</h1>
         <p>
@@ -239,7 +249,7 @@
         <h3>Does SprintMagic store my data?</h3>
         <p>No. Everything lives in your own repository. Nothing is sent to any server.</p>
       </main>
-    </div>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

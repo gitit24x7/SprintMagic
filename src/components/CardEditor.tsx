@@ -14,7 +14,8 @@ interface Props {
   onDeleteSubtask: (subId: string) => void
 }
 
-const PRIORITIES: Priority[] = ['high', 'med', 'low', 'p0', 'p1', 'p2', 'p3']
+const PRIORITIES_DEFAULT: Priority[] = ['high', 'med', 'low']
+const PRIORITIES_PSCALE: Priority[]  = ['p0', 'p1', 'p2', 'p3']
 
 export function CardEditor({
   card,
@@ -146,17 +147,18 @@ export function CardEditor({
 
           {/* Priority */}
           <Field label="Priority">
-            <div className="flex gap-1.5">
-              {PRIORITIES.map((p) => {
+            <div className="flex gap-1.5 flex-wrap">
+              {(priorityStyle === 'p-scale' ? PRIORITIES_PSCALE : PRIORITIES_DEFAULT).map((p) => {
                 const meta = getPriorityMeta(p, priorityStyle)
+                const isActive = card.priority === p
                 return (
                   <button
                     key={p}
                     onClick={() =>
-                      onPatch({ priority: card.priority === p ? undefined : p })
+                      onPatch({ priority: isActive ? undefined : p })
                     }
                     className={`rounded-lg px-2.5 py-1 text-[12px] font-medium ring-1 transition ${
-                      card.priority === p
+                      isActive
                         ? meta.chip + ' ring-transparent'
                         : 'bg-white text-zinc-500 ring-zinc-200 hover:bg-zinc-50'
                     }`}
