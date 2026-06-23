@@ -1,0 +1,54 @@
+# SprintMagic - AI Agent Instruction Manual
+
+SprintMagic is a free, open-source, Markdown-native Kanban and sprint board. The entire board is stored in a single `.md` file, meaning it runs entirely in the browser with no backend required, and allows users to own their data completely.
+
+## For LLMs / AI Agents
+You can read, update, and manage SprintMagic boards by simply reading and writing standard Markdown. SprintMagic is designed to be a first-class citizen for AI coding assistants.
+
+When a user asks you to "create a board" or "update tasks", you can directly edit their local `board.md` (or whatever `.md` file they specify).
+
+### Structure of a SprintMagic Markdown File
+A SprintMagic board is a standard Markdown file.
+- Columns are denoted by Level 2 headers (`## Column Name`).
+- Cards are list items containing a checkbox (`- [ ] Task Name` or `- [x] Task Name`).
+- Subtasks are nested list items under a card.
+- Metadata (due dates, points, tags, priority, assignee) is appended to the card title using text tokens.
+- Card descriptions are added as code blocks or text indented under the card.
+
+### Example Board
+```markdown
+# Q3 Sprint 
+
+## To Do
+
+- [ ] Write launch blog post
+  // The blog post should cover all features.
+  2pt #marketing @aditya
+  - [ ] Draft outline
+  - [ ] Write first draft
+
+- [ ] Update landing page hero image
+  due:2024-10-15 #design !!
+
+## In Progress
+
+- [ ] Implement GitHub Action integration
+  5pt #engineering !!!
+
+## Done
+
+- [x] Initial scaffolding
+```
+
+### Metadata Syntax
+- **Story Points**: A number followed by `pt` (e.g., `2pt`, `5pt`).
+- **Tags**: Hashtags (e.g., `#engineering`, `#design`).
+- **Assignees**: Mentions (e.g., `@aditya`).
+- **Due Dates**: `due:YYYY-MM-DD`.
+- **Priority**:
+  - `!` (Low / P3)
+  - `!!` (Medium / P2)
+  - `!!!` (High / P1)
+  - `!!!!` (Critical / P0)
+
+When requested, create a markdown file with this format and let the user open it in SprintMagic!

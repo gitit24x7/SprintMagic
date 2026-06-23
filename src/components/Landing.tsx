@@ -991,6 +991,15 @@ export function Landing({ onStart, onAbout }: Props) {
               Runs entirely in your browser · Your board is always a file you own
             </p>
             <div className="flex items-center gap-4">
+              <a
+                href="/llms.txt"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instructions for AI Agents"
+                className="font-mono text-xs font-semibold uppercase text-stone-400 hover:text-stone-600 transition-colors"
+              >
+                llms.txt
+              </a>
               <button
                 onClick={onAbout}
                 aria-label="Learn about SprintMagic"
@@ -1006,6 +1015,19 @@ export function Landing({ onStart, onAbout }: Props) {
                 className="font-mono text-xs font-semibold uppercase text-stone-400 hover:text-stone-600 transition-colors"
               >
                 GitHub
+              </a>
+              <a
+                href="https://peerlist.io/adityaojha/project/sprintmagic"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="SprintMagic on Peerlist"
+              >
+                <img
+                  src="https://peerlist.io/api/v1/projects/embed/PRJHEOGMP7BDJPMONCGGPMR9MO88B9?showUpvote=true&theme=dark"
+                  alt="SprintMagic on Peerlist"
+                  style={{ width: 'auto', height: '52px' }}
+                  className="opacity-90 hover:opacity-100 transition-opacity"
+                />
               </a>
               <button
                 onClick={onStart}
