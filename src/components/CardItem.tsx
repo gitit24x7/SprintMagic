@@ -151,7 +151,7 @@ export function CardBody({ card, mode, status, priorityStyle, onToggleDone, onOp
         ${dimmed ? 'opacity-25 saturate-0' : ''}
         ${dragging
           ? 'shadow-[0_20px_40px_-8px_rgba(0,0,0,0.22),0_4px_12px_-2px_rgba(0,0,0,0.10)] scale-[1.015] rotate-[0.4deg] z-20'
-          : 'shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_16px_-8px_rgba(0,0,0,0.13),0_18px_26px_-14px_rgba(234,88,12,0.12),0_0_0_0.5px_rgba(0,0,0,0.04)] hover:-translate-y-[2px] hover:shadow-[0_2px_4px_rgba(0,0,0,0.05),0_14px_26px_-8px_rgba(0,0,0,0.16),0_28px_40px_-16px_rgba(234,88,12,0.20),0_0_0_0.5px_rgba(0,0,0,0.05)]'
+          : 'shadow-[0_2px_6px_rgba(0,0,0,0.08),0_0_0_0.5px_rgba(0,0,0,0.04)] hover:-translate-y-[2px] hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.14),0_3px_8px_-2px_rgba(0,0,0,0.08),0_0_0_0.5px_rgba(0,0,0,0.04)]'
         }
       `}
     >
